@@ -4,9 +4,9 @@
   , "description": "Gum.js the elastic node"
   , "homepage": "http://gumjs.com"
   , "keywords": ["elastic", "distributed", "computing"]
-  , "author": "Balazs Nagy <balazs.1.nagy@nsn.com>"
+  , "author": "Balazs Nagy <jukilo83@gmail.com>"
   , "contributors": [
-  		"Attila Incze <attila.incze@nsn.com>"
+  		"Attila Incze <attila.incze@gmail.com>"
   	]
   , "repository": {
         "type": "git"
