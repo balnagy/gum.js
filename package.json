@@ -1,0 +1,27 @@
+{
+    "name": "gum.js"
+  , "version": "0.0.1"
+  , "description": "Gum.js the elastic node"
+  , "homepage": "http://gumjs.com"
+  , "keywords": ["elastic", "distributed", "computing"]
+  , "author": "Balazs Nagy <balazs.1.nagy@nsn.com>"
+  , "contributors": [
+  		"Attila Incze <attila.incze@nsn.com>"
+  	]
+  , "repository": {
+        "type": "git"
+      , "url": "git@github.com:balnagy/gum.js.git"
+    }
+  , "dependencies": {
+  		"amqp": "*"
+    }
+  , "devDependencies": {
+  		"mocha": "*",
+  		"sinon": "*",
+  		"nock": "*"
+  }
+  , "main": "./lib/gum.js"
+  , "engines": {
+    "node":">= 0.6.0 < 0.7.0"
+  }
+}
