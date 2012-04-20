@@ -13,7 +13,8 @@
       , "url": "git@github.com:balnagy/gum.js.git"
     }
   , "dependencies": {
-  		"amqp": "*"
+  		"amqp": "*",
+  		"optimist": "*"
     }
   , "devDependencies": {
   		"mocha": "*",

@@ -3,6 +3,7 @@ var sinon = require("sinon"),
 	test_load = require("../loader").load;
 	
 var gum = test_load("gum.js");
+var argv = require('optimist').argv;
 	
 describe("Gum", function() {
 	
@@ -26,6 +27,8 @@ describe("Gum", function() {
 
 	afterEach(function() {
 		sandbox.restore();
+		// Removing command line parameter
+		delete argv.g;
 	})
 	
 	
@@ -66,7 +69,7 @@ describe("Gum", function() {
 			assert.equal(gum.bubba.func, func);
 		})
 		
-		it("should not connectif no node type defined", function() {
+		it("should not connect if no node type defined", function() {
 			// given
 			// when
 			gum.chew();
@@ -99,6 +102,32 @@ describe("Gum", function() {
 			gum.chew(["db"]);
 			// then
 			assert.notEqual(gum.bubba.func, func);
+		})
+		
+		it("should stub on a not cli argument defined node type", function() {
+			// given
+			argv['g'] = "db";
+			var func = function() {};
+			gum.bubba = {
+				"func": func
+			}
+			// when
+			gum.chew();
+			// then
+			assert.notEqual(gum.bubba.func, func);
+		})
+		
+		it("should handle more types in cli argument", function() {
+			// given
+			argv['g'] = "db,bubba";
+			var func = function() {};
+			gum.bubba = {
+				"func": func
+			}
+			// when
+			gum.chew();
+			// then
+			assert.equal(gum.bubba.func, func);
 		})
 		
 		it("should listen on a defined node type", function() {
