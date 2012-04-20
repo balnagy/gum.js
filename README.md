@@ -6,7 +6,7 @@ Gum.js is a framework which helps you writing a code which can run on a micro in
 
 # Usage
 
-You define your business logic:
+You define your business logic (start.js):
 
 ```js
 var gum = require('gum.js');
@@ -30,17 +30,17 @@ gum.db = {
 And start your node with a single instance
 
 ```js
-gum.chew();
+node start.js
 ```
 
 Or start different types of instances in that amount you want
 
 ```js
-// start_frontend.js
-gum.chew(['frontend']);
+// Start as frontend
+node start.js -g frontend
 
-// start_db.js
-gum.chew(['db']);
+// Start as db
+node start.js -g db
 ```
 
 # How it works
